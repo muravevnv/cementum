@@ -1,0 +1,21 @@
+.video {
+  padding: 60px 20px;
+
+  @include media(md) {
+    padding: 40px 16px;
+  }
+
+  &__media {
+    width: 100%;
+
+    img {
+      display: block;
+      width: 100%;
+      border-radius: 30px;
+
+      @include media(md) {
+        border-radius: 16px;
+      }
+    }
+  }
+}

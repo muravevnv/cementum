@@ -1,0 +1,44 @@
+section.steps 
+  .container 
+    .steps__top
+      .steps__head 
+        .steps__head-badge-left.title-badge.title-badge--blue #стажировка
+        .steps__head-badge-right.title-badge.title-badge--outline-blue #цементум
+        h2.steps__title.h2 ЭТАПЫ ПРОХОЖДЕНИЯ <br> СТАЖИРОВКИ
+      .steps__slider-nav.slider-control
+        button(type="button").slider-control-btn.js-steps-slider-prev
+          +svg(16, 12, 'slider-arrow-left') 
+        button(type="button").slider-control-btn.js-steps-slider-next
+          +svg(16, 12, 'slider-arrow-right') 
+    .steps__slider.js-steps-slider 
+      .swiper-wrapper
+        .steps__item.swiper-slide
+          picture.steps__item-img 
+            source(srcset="./img/steps/step-01.webp" type="image/webp")
+            img(src="./img/steps/step-01.png", alt="")
+          .steps__item-num 01
+          .steps__item-desc Заполнение анкеты на сайте
+        .steps__item.swiper-slide
+          picture.steps__item-img 
+            source(srcset="./img/steps/step-02.webp" type="image/webp")
+            img(src="./img/steps/step-02.png", alt="")
+          .steps__item-num 02
+          .steps__item-desc Онлайн-интервью с сотрудником компании
+        .steps__item.swiper-slide
+          picture.steps__item-img 
+            source(srcset="./img/steps/step-03.webp" type="image/webp")
+            img(src="./img/steps/step-03.png", alt="")
+          .steps__item-num 03
+          .steps__item-desc Начало
+        .steps__item.swiper-slide
+          picture.steps__item-img 
+            source(srcset="./img/steps/step-04.webp" type="image/webp")
+            img(src="./img/steps/step-04.png", alt="")
+          .steps__item-num 04
+          .steps__item-desc Знакомство с наставником
+        .steps__item.swiper-slide
+          picture.steps__item-img 
+            source(srcset="./img/steps/step-01.webp" type="image/webp")
+            img(src="./img/steps/step-01.png", alt="")
+          .steps__item-num 05
+          .steps__item-desc Пункт номер пять

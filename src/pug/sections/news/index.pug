@@ -1,0 +1,35 @@
+section.news 
+  .container 
+    h2.news__title.h2 новости и анонсы
+    .news__navigation 
+      label.news__navigation-item(for="news-01") 
+        input(type="radio", name="news" id="news-01")
+        span Ферзиково
+      label.news__navigation-item(for="news-02") 
+        input(type="radio", name="news" id="news-02")
+        span Вольск
+      label.news__navigation-item(for="news-03") 
+        input(type="radio", name="news" id="news-03" checked)
+        span Москва
+    .news__list 
+      .news__item.news__item--main 
+        picture.news__item-img
+          source(srcset="./img/news/news-01.webp" type="image/webp") 
+          img(src="./img/news/news-01.jpg", alt="")
+        .news__item-info 
+          .news__item-date 10 апреля 2024
+          .news__item-desc Эксперты ЦЕМЕНТУМ провели лекцию в Санкт-Петербургском государственном технологическом институте
+      .news__item 
+        picture.news__item-img
+          source(srcset="./img/news/news-02.webp" type="image/webp") 
+          img(src="./img/news/news-02.jpg", alt="")
+        .news__item-info 
+          .news__item-date 10 апреля 2024
+          .news__item-desc Эксперты ЦЕМЕНТУМ провели лекцию в Санкт-Петербургском государственном технологическом институте
+      .news__item.news__item--bg 
+        .news__item-info 
+          .news__item-date 10 апреля 2024
+          .news__item-desc Эксперты ЦЕМЕНТУМ провели лекцию в Санкт-Петербургском государственном технологическом институте
+    button.news__more.btn.btn--xl.btn--wide 
+        span Подать заявку
+        +svg(20, 20, 'arrow-link')

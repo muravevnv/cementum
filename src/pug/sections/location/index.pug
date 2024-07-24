@@ -1,0 +1,35 @@
+section.section.location 
+  .container 
+    .location__top 
+      h2.location__title.h2 локации <br> для стажировки
+      .location__slider-nav.slider-control 
+        button(type="button").slider-control-btn.js-location-slider-prev
+          +svg(16, 12, 'slider-arrow-left') 
+        button(type="button").slider-control-btn.js-location-slider-next
+          +svg(16, 12, 'slider-arrow-right') 
+    .location__slider.js-location-slider 
+      .swiper-wrapper 
+        .location__item.swiper-slide 
+          picture.location__item-img 
+            source(srcset="./img/location/img-01.webp")
+            img(src="./img/location/img-01.jpg", alt="")
+          .location__item-title Воскресенск
+          .location__item-desc Lorem ipsum dolor sit amet consectetur. Vestibulum lectus in sollicitudi
+        .location__item.swiper-slide 
+          picture.location__item-img 
+            source(srcset="./img/location/img-02.webp")
+            img(src="./img/location/img-02.jpg", alt="")
+          .location__item-title Коломна (Щурово)
+          .location__item-desc Lorem ipsum dolor sit amet consectetur. Vestibulum lectus in sollicitudi
+        .location__item.swiper-slide 
+          picture.location__item-img 
+            source(srcset="./img/location/img-03.webp")
+            img(src="./img/location/img-03.jpg", alt="")
+          .location__item-title Калуга (Ферзиково)
+          .location__item-desc Lorem ipsum dolor sit amet consectetur. Vestibulum lectus in sollicitudi
+        .location__item.swiper-slide 
+          picture.location__item-img 
+            source(srcset="./img/location/img-04.webp")
+            img(src="./img/location/img-04.jpg", alt="")
+          .location__item-title Вольск
+          .location__item-desc Lorem ipsum dolor sit amet consectetur. Vestibulum lectus in sollicitudi

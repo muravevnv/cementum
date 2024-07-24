@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+  include mixins/_mixins
+  include includes/head
+  +head('Цементум')
+  body 
+    include components/header
+    main
+      section   
+        include sections/hero/index
+        include sections/about/index
+        include sections/video/index
+        include sections/steps/index
+        include sections/diary/index
+        include sections/banner/index
+        include sections/location/index
+        include sections/experts/index
+        include sections/final/index
+        include sections/news/index
+        include sections/contacts/index
+    include components/footer
+    include includes/scripts

@@ -1,0 +1,178 @@
+.final {
+  padding: 60px 0;
+  background: url('../img/final/final-bg.svg') top left / auto no-repeat,
+              url('../img/final/final-bg-down.svg') bottom right / auto no-repeat;
+
+  @include media(lg) {
+    background: url('../img/final/final-bg-down.svg') bottom right / auto no-repeat;
+  }
+
+  @include media(md) {
+    padding: 40px 0;
+    background-size: contain;
+  }
+
+  &__head {
+    position: relative;
+    margin-bottom: 90px;
+
+    @include media(md) {
+      margin-bottom: 80px;
+    }
+
+    &-badge-left {
+      top: -40px;
+      left: -20px;
+      z-index: 2;
+      transform: rotate(-8deg);
+
+      @include media(lg) {
+        left: -10px;
+        top: -30px;
+      }
+
+      @include media(md) {
+        top: -40px;
+      }
+
+      @include media(sm) {
+        top: -25px;
+      }
+    }
+    
+    &-badge-right {
+      bottom: -43px;
+      left: 595px;
+      z-index: 2;
+
+      @include media(lg) {
+        left: 440px;
+        bottom: -35px;
+      }
+
+      @include media(md) {
+        left: 260px;
+      }
+
+      @include media(sm) {
+        top: auto;
+        left: 140px;
+        bottom: -25px;
+      }
+    }
+  }
+
+  &__title {
+
+    @include media(sm) {
+      max-width: 320px;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    @include media(sm) {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+
+  &__img {
+
+    img {
+      border-radius: 30px;
+
+      @include media(md) {
+        border-radius: 16px;
+      }
+
+      @include media(sm) {
+        height: 280px;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__advantages {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include media(sm) {
+      gap: 16px;
+    }
+
+    &-item {
+      padding: 50px;
+      border: 1px solid #D7D7D7;
+      background-color: var(--color-whte);
+      min-height: 400px;
+      height: 100%;
+      border-radius: 20px;
+
+      @include media(lg) {
+        padding: 32px;
+        height: auto;
+        min-height: initial;
+      }
+
+      @include media(md) {
+        border-radius: 16px;
+      }
+
+      @include media(sm) {
+        padding: 24px 16px 16px;
+      }
+
+      &-num {
+        padding: 10px 0;
+        margin-bottom: 14px;
+
+        @include media(lg)  {
+          padding: 0;
+          margin-bottom: 12px;
+        }
+
+        @include media(md) {
+          font-size: 14px;
+        }
+      }
+
+      &-title {
+        max-width: 428px;
+        width: 100%;
+        padding: 10px 0;
+        border-top: 1px solid #D7D7D7;
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+
+        @include media(lg)  {
+          padding: 12px 0;
+          font-size: 18px;
+        }
+
+        @include media(md) {
+          font-size: 16px;
+        }
+      }
+
+      &-desc {
+        font-size: 18px;
+
+        @include media(md) {
+          font-size: 16px;
+        }
+
+        @include media(sm) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+-
+  var expertsList = [
+    {
+      id: 1,
+      name: 'Гвоздовский Артём',
+      post: 'Руководитель производства',
+      region: 'Ферзиково'
+    },
+    {
+      id: 2,
+      name: 'Воробьев Роман',
+      post: 'Главный технолог',
+      region: 'Вольск'
+    },
+    {
+      id: 3,
+      name: 'Горохов Александр',
+      post: 'Руководитель производства',
+      region: 'Ферзиково'
+    },
+    {
+      id: 4,
+      name: 'Дрёмина Юлия',
+      post: 'Руководитель службы качества',
+      region: 'Ферзиково'
+    },
+    {
+      id: 5,
+      name: 'Коврижкин Андрей',
+      post: 'Главный маркшейдер',
+      region: 'Петрозаводск'
+    },
+    {
+      id: 6,
+      name: 'Ивлиева Евгения',
+      post: 'Руководитель службы по разработке материалов и технологий',
+      region: 'Москва'
+    }
+  ]
+section.section.experts 
+  .container 
+    .experts__head 
+      .experts__head-badge-left.title-badge #ЭКСПЕРТЫ
+      .experts__head-badge-right.title-badge.title-badge--outline #НАСТАВНИКИ
+      h1.experts__title.h2 Учись у ведущих <br> экспертов
+    .experts__list.js-experts-slider
+      .swiper-wrapper
+        for expert in expertsList
+          .experts__item.swiper-slide
+            picture.experts__item-img 
+              source(srcset=`./img/experts/img-0${expert.id}.webp` type="image/webp")
+              img(src=`./img/experts/img-0${expert.id}.png`, alt=`${expert.name}`)
+            .experts__item-name= expert.name
+            .experts__item-post= expert.post
+            .experts__item-region= expert.region 

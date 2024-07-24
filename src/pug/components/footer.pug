@@ -1,0 +1,36 @@
+footer.footer 
+  .footer__top  
+    .container 
+      .footer__main 
+        a.footer__logo(href="#") 
+          img(src="./img/logo.png", alt="")
+        .footer__sub 
+          .footer__sub-title Подписаться на новости и вакансии
+          form.footer__sub-form(action="#")
+            .form-group 
+              label.form-label(for="#")
+              input.form-control(type="text" placeholder="Email") 
+            button.form-btn.btn.btn--s Подписаться
+      nav.footer__nav 
+        ul.footer__nav-list 
+          li.footer__nav-item 
+            a(href="#") О стажировке
+          li.footer__nav-item 
+            a(href="#") Вакансии
+          li.footer__nav-item 
+            a(href="#") Истории успеха
+          li.footer__nav-item 
+            a(href="#") Этапы стажировки
+          li.footer__nav-item 
+            a(href="#") Контакты
+      .footer__socials 
+        a.footer__socials-link(href="#")
+          +svg(24, 24, 'tg') 
+        a.footer__socials-link(href="#")
+          +svg(24, 24, 'vk') 
+        a.footer__socials-link(href="#")
+          +svg(24, 24, 'yt') 
+  .footer__bottom 
+    .container
+      .footer__company © 2024 Цементум. Все права защищены. Копирование материалов запрещено.
+      a(href="#").footer__policy Политика конфиденциальности

@@ -1,0 +1,138 @@
+.experts {
+  overflow: hidden;
+  padding: 75px 0 60px;
+  background: url('../img/experts/experts-bg.svg') top right / 100% no-repeat;
+
+  @include media(md) {
+    padding: 40px 0;
+  }
+
+  @include media(sm) {
+    background-size: contain;
+  }
+
+  &__head {
+    position: relative;
+    margin-bottom: 100px;
+
+    @include media(md) {
+      margin-bottom: 80px;
+    }
+
+    &-badge-left {
+      top: -50px;
+      left: 0;
+      z-index: 2;
+
+      @include media(lg) {
+        left: -10px;
+        top: -30px;
+      }
+
+      @include media(md) {
+        top: -40px;
+      }
+
+      @include media(sm) {
+        top: -25px;
+      }
+    }
+    
+    &-badge-right {
+      bottom: 15px;
+      left: 440px;
+      z-index: 2;
+      transform: rotate(6deg);
+
+      @include media(lg) {
+        left: 320px;
+      }
+
+      @include media(md) {
+        left: 220px;
+        bottom: -10px;
+      }
+
+      @include media(sm) {
+        top: auto;
+        left: 120px;
+        bottom: -30px;
+      }
+    }
+  }
+
+  &__list {
+    pointer-events: none;
+
+    @include media(md) {
+      pointer-events: all;
+    }
+
+    .swiper-wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 100px 36px;
+
+
+      @include media(md) {
+        display: flex;
+        gap: 0;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 14px;
+    font-size: 20px;
+
+    @include media(md) {
+      max-width: 280px;
+      font-size: 16px;
+      gap: 8px;
+    }
+
+    @include media(sm) {
+      max-width: 240px;
+      font-size: 14px;
+    }
+
+    &-img {
+      @include media(md) {
+        height: 280px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      @include media(sm) {
+        height: 240px;
+      }
+    }
+
+    &-name {
+      font-size: 30px;
+      font-weight: 700;
+
+      @include media(md) {
+        font-size: 24px;
+      }
+
+      @include media(sm) {
+        font-size: 16px;
+      }
+    }
+
+    &-post {
+      
+    }
+
+    &-region {
+      opacity: .5;
+    }
+  }
+}

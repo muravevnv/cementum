@@ -1,0 +1,160 @@
+.footer {
+  border-radius: 32px 32px 0 0;
+  background-color: var(--color-secondary-dark);
+  color: var(--color-whte);
+  padding: 60px 0 10px;
+
+  @include media(sm) {
+    padding: 40px 0 10px;
+    border-radius: 20px 20px 0 0;
+  }
+
+  &__top {
+    padding-bottom: 56px;
+
+    @include media(lg) {
+      padding-bottom: 40px;
+    }
+
+    .container {
+      display: flex;
+      align-items: flex-start;
+      gap: 40px;
+
+      @include media(sm) {
+        flex-direction: column;
+        gap: 32px;
+      }
+    }
+  }
+
+  &__logo {
+    display: block;
+    max-width: 470px;
+    width: 100%;
+    margin-bottom: 40px;
+
+    @include media(lg) {
+      max-width: 200px;
+    }
+  }
+
+  &__main {
+    max-width: 470px;
+    width: 100%;
+
+    @include media(sm) {
+      max-width: 100%;
+    }
+  }
+
+  &__sub {
+    max-width: 305px;
+
+    @include media(sm) {
+      max-width: 100%;
+    }
+
+    &-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 14px;
+
+      @include media(lg) {
+        font-size: 16px;
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  &__nav {
+    max-width: 320px;
+    width: 100%;
+    margin: 0 40px 0 auto;
+
+    @include media(lg) {
+      margin-right: 0px;
+    }
+
+    @include media(sm) {
+      margin: 0;
+      max-width: 100%;
+    }
+
+    &-item {
+      width: 100%;
+      margin-bottom: 14px;
+      padding-bottom: 14px;
+      color: var(--color-whte);
+      border-bottom: 1px solid cl(whte, .2);
+      transition: var(--transition);
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      @media(any-hover: hover) {
+
+        &:hover {
+          border-color: cl(whte);
+        }
+      }
+    }
+  }
+  
+  &__socials {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &-link {
+      --size: 40px;
+      width: var(--size);
+      height: var(--size);
+      flex-shrink: 0;
+      border-radius: 50%;
+      border: 1px solid cl(whte, .4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+
+      @media(any-hover: hover) {
+
+        &:hover {
+          background-color: var(--color-whte);
+          color: var(--color-blck);
+          border-color: var(--color-whte);
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    padding: 24px 0 16px;
+    border-top: 1px solid cl(whte, .4);
+
+    @include media(sm) {
+      font-size: 14px;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__policy {
+    cursor: pointer;
+
+    @media(any-hover: hover) {
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -7,7 +7,7 @@
       <link href="css/style.css" rel="stylesheet">
       <title>Цементум</title>
     </head>
-  <body> 
+  <body>
     <header class="header"> 
       <div class="container"> <a class="header__logo" href="#"> <picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt=""></picture></a>
         <nav class="header__nav"> 
@@ -33,7 +33,7 @@
                 <div class="hero__desc">Узнай, как стать частью нашей команды и реализовать себя в профессии</div>
               </div>
             </div>
-            <button class="hero__btn btn btn--xl btn--wide"> <span>Подать заявку</span><svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <button class="hero__btn btn btn--xl btn--wide js-modal-open" type="button" data-modal="order"> <span>Подать заявку</span><svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M8.90392 6.60632V8.22648L17.6195 8.23222L6.0313 19.8204L7.18035 20.9694L18.7685 9.38127L18.7742 18.0968L20.3944 18.0968V6.60632H8.90392Z" fill="#272727"/>
 </svg>
             </button>
@@ -204,7 +204,8 @@
                     <div class="diary__item-desc">
                       Студент пятого курса Петрозаводского государственного университета. Учится по специальности горное дело и уже трудится 
                       на карьере «Шокшинский кварцит» в должности начальника смены.
-                    </div><a class="diary__item-btn btn btn--wide btn--round" href="#">Читать далее</a>
+                    </div>
+                    <button class="diary__item-btn btn btn--wide btn--round js-modal-open" type="button" data-modal="documents">Читать далее</button>
                   </div>
                 </div>
                 <div class="diary__item swiper-slide"> 
@@ -215,7 +216,8 @@
                     <div class="diary__item-desc">
                       Студент пятого курса Петрозаводского государственного университета. Учится по специальности горное дело и уже трудится 
                       на карьере «Шокшинский кварцит» в должности начальника смены.
-                    </div><a class="diary__item-btn btn btn--wide btn--round" href="#">Читать далее</a>
+                    </div>
+                    <button class="diary__item-btn btn btn--wide btn--round js-modal-open" type="button" data-modal="documents">Читать далее</button>
                   </div>
                 </div>
               </div>
@@ -485,6 +487,128 @@
         </div>
       </div>
     </footer>
+    <div class="modal js-modal" data-modal="order">
+      <div class="modal__overlay js-modal-overlay"> </div>
+      <div class="modal__inner"> 
+        <div class="modal__content">
+          <button class="modal__close js-modal-close">
+              <svg width="17" height="17">
+                <use xlink:href="img/icons/icons.svg#close"></use>
+              </svg>
+          </button>
+          <div class="modal__title">заявка на прохождение стажировки</div>
+          <form class="step-app modal-form" id="form-modal" action="#">
+            <div class="modal-form__content wizzard">
+              <h3 class="modal-form__section-title">01</h3>
+              <section class="modal-form__section-content">
+                <div class="form-group"> 
+                  <label class="form-label" for="userName">Фамилия Имя Отчество<span>*</span></label>
+                  <input class="form-control form-control--grey" type="text" id="userName" name="userName" placeholder="Введите ваши ФИО" required><span class="form-error">Это поле должно быть заполнено</span>
+                </div>
+                <div class="form-group"> 
+                  <label class="form-label" for="userDate">Дата рождения<span>*</span></label>
+                  <input class="form-control form-control--grey" type="text" id="userDate" name="userDate" placeholder="DD.MM.YYYY " required><span class="form-error">Это поле должно быть заполнено</span>
+                </div>
+                <div class="form-group"> 
+                  <label class="form-label" for="userNum">Телефон для связи<span>*</span></label>
+                  <input class="form-control form-control--grey js-tel-input" type="text" id="userNum" name="userNum" placeholder="+7(___)___-__-__" required><span class="form-error">Это поле должно быть заполнено</span>
+                </div>
+                <div class="form-group"> 
+                  <label class="form-label" for="userMail">E-mail<span>*</span></label>
+                  <input class="form-control form-control--grey" type="text" id="userEmail" name="userEmail" placeholder="Введите ваш E-mail" required><span class="form-error">Это поле должно быть заполнено</span>
+                </div>
+                <div class="form-group"> 
+                  <label class="form-label" for="userPlace">Место проживания<span>*</span></label>
+                  <input class="form-control form-control--grey" type="text" id="userPlace" name="userPlace" required><span class="form-error">Это поле должно быть заполнено</span>
+                </div>
+              </section>
+              <h3 class="modal-form__section-title">02</h3>
+              <section class="modal-form__section-content">
+                <div class="form-group"> 
+                  <label class="form-label" for="">Учебное заведение<span>*</span></label>
+                  <input class="form-control form-control--grey" type="text" placeholder="Введите ваши ФИО" required><span class="form-error">Это поле должно быть заполнено</span>
+                </div>
+                <div class="form-group"> 
+                  <label class="form-label" for="">Факультет<span>*</span></label>
+                  <input class="form-control form-control--grey" type="text" name="faculty" id="faculty" placeholder="" required><span class="form-error">Это поле должно быть заполнено</span>
+                </div>
+                <div class="form-group"> 
+                  <label class="form-label" for="">Курс<span>*</span></label>
+                  <input class="form-control form-control--grey" type="text" name="course" id="course" placeholder="" required><span class="form-error">Это поле должно быть заполнено</span>
+                </div>
+                <div class="form-group"> 
+                  <label class="form-label" for="">Локация для стажировки<span>*</span></label>
+                  <div class="form-select">
+                    <select name="mySelect" required> 
+                      <option value="default" selected disabled hidden> </option>
+                      <option>Москва</option>
+                      <option>Москва</option>
+                      <option>Москва</option>
+                    </select><span class="form-error">Это поле должно быть заполнено</span>
+                  </div>
+                </div>
+              </section>
+              <h3 class="modal-form__section-title">03</h3>
+              <section class="modal-form__section-content">
+                <div class="form-group"> 
+                  <label class="form-label" for="">Направление для стажировки<span>*</span></label>
+                  <div class="form-select"> 
+                    <select name="mySelect" required> 
+                      <option value="default" selected disabled hidden></option>
+                      <option>Электрическая служба</option>
+                      <option>Электрическая служба</option>
+                      <option>Еще не определился</option>
+                    </select><span class="form-error">Это поле должно быть заполнено</span>
+                  </div>
+                </div>
+                <div class="form-group"> 
+                  <label class="form-label" for="">Ссылка на резюме<span>*</span></label>
+                  <input class="form-control form-control--grey" type="text" name="resume" id="resume" placeholder="" required><span class="form-error">Это поле должно быть заполнено</span>
+                </div>
+                <div class="form-group"> <span class="form-label">Файл резюме (PDF, DOC, TXT)</span>
+                  <div class="form-file"> 
+                    <input class="form-file__input js-form-file" type="file" id="doc" name="doc" required>
+                    <label class="form-file__content" for="doc">Прикрепить файл</label><span class="form-error">Это поле должно быть заполнено</span><span class="form-file__name js-form-file-name"> </span>
+                  </div>
+                </div>
+                <div class="form-agreement">Нажимая “Отправить заявку”, Вы даете согласие на обработку персональных данных.</div>
+              </section>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="modal js-modal" data-modal="documents">
+      <div class="modal__overlay js-modal-overlay"> </div>
+      <div class="documents">
+        <div class="modal__close js-modal-close">
+            <svg width="17" height="17">
+              <use xlink:href="img/icons/icons.svg#close"></use>
+            </svg>
+        </div>
+        <div class="documents__title h3">дневники <br> успеха стажеров</div>
+        <div class="documents__list"> <a class="documents__item" href="#"> 
+            <div class="documents__item-icon"> <picture><source srcset="./img/icons/document.webp" type="image/webp"><img src="./img/icons/document.png" alt=""></picture></div>
+            <div class="documents__item-name">Алексей Семенов</div></a><a class="documents__item" href="#"> 
+            <div class="documents__item-icon"> <picture><source srcset="./img/icons/document.webp" type="image/webp"><img src="./img/icons/document.png" alt=""></picture></div>
+            <div class="documents__item-name">Анастасия Старилова</div></a><a class="documents__item" href="#"> 
+            <div class="documents__item-icon"> <picture><source srcset="./img/icons/document.webp" type="image/webp"><img src="./img/icons/document.png" alt=""></picture></div>
+            <div class="documents__item-name">Валерия Гришнова</div></a><a class="documents__item" href="#"> 
+            <div class="documents__item-icon"> <picture><source srcset="./img/icons/document.webp" type="image/webp"><img src="./img/icons/document.png" alt=""></picture></div>
+            <div class="documents__item-name">Виктор Маркин</div></a><a class="documents__item" href="#"> 
+            <div class="documents__item-icon"> <picture><source srcset="./img/icons/document.webp" type="image/webp"><img src="./img/icons/document.png" alt=""></picture></div>
+            <div class="documents__item-name">Евгений Бабин</div></a><a class="documents__item" href="#"> 
+            <div class="documents__item-icon"> <picture><source srcset="./img/icons/document.webp" type="image/webp"><img src="./img/icons/document.png" alt=""></picture></div>
+            <div class="documents__item-name">Илья Родионов</div></a><a class="documents__item" href="#"> 
+            <div class="documents__item-icon"> <picture><source srcset="./img/icons/document.webp" type="image/webp"><img src="./img/icons/document.png" alt=""></picture></div>
+            <div class="documents__item-name">Илья Самосвалов</div></a><a class="documents__item" href="#"> 
+            <div class="documents__item-icon"> <picture><source srcset="./img/icons/document.webp" type="image/webp"><img src="./img/icons/document.png" alt=""></picture></div>
+            <div class="documents__item-name">Мария Бевз</div></a></div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-steps/1.1.0/jquery.steps.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"> </script>
     <script src="js/app.min.js"></script>
   </body>
 </html>

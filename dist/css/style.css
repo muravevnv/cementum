@@ -696,6 +696,8 @@ button.swiper-pagination-bullet {
   --color-text--rgb: 13, 13, 13;
   --color-primary: #94FD04;
   --color-primary--rgb: 148, 253, 4;
+  --color-primary-light: #D4FF99;
+  --color-primary-light--rgb: 212, 255, 153;
   --color-primary-dark: #162734;
   --color-primary-dark--rgb: 22, 39, 52;
   --color-secondary: #5E86B6;
@@ -720,6 +722,8 @@ button.swiper-pagination-bullet {
   --color-footer-bg--rgb: 9, 14, 35;
   --color-border: #E7E7E7;
   --color-border--rgb: 231, 231, 231;
+  --color-red: #DA0000;
+  --color-red--rgb: 218, 0, 0;
   --container-width: 1320px;
   --container-pad: 20px;
   --font-main: "GraphikLCG", sans-serif;
@@ -1208,6 +1212,7 @@ p {
   line-height: 1.3;
   font-weight: 700;
   font-family: var(--font-title);
+  text-transform: uppercase;
 }
 
 .form-group {
@@ -1215,16 +1220,12 @@ p {
   position: relative;
 }
 
-.form-group.is-error .form-error {
-  opacity: 1;
-}
-
 .form-error {
-  position: absolute;
-  left: 0;
-  bottom: -12px;
-  font-size: 10px;
-  opacity: 0;
+  font-size: 12px;
+  line-height: 1;
+  margin-top: 8px;
+  color: var(--color-red);
+  display: none;
 }
 
 .form-label {
@@ -1272,8 +1273,116 @@ p {
   display: none;
 }
 
+.form-control--grey {
+  background-color: #F2F3F4;
+  border: 1px solid rgba(var(--color-secondary--rgb), 0.3);
+  color: var(--color-blck);
+}
+
+.form-control.error {
+  border-color: var(--color-red);
+}
+
+.form-control.error + .form-error {
+  display: block;
+}
+
 .form-btn.btn {
   margin-top: 14px;
+}
+
+.form-select {
+  position: relative;
+}
+
+.form-select::after {
+  position: absolute;
+  content: "";
+  width: 53px;
+  height: 53px;
+  background-color: #F2F3F4;
+  top: 1px;
+  right: 4px;
+  z-index: 1;
+}
+
+.form-select::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: url("../img/icons/select-arrow.svg") center center/20px no-repeat;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.form-select select {
+  width: 100%;
+  display: inline-block;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 1.3;
+  font-style: normal;
+  font-weight: 400;
+  padding: 16px 20px;
+  height: 55px;
+  border-radius: 6px;
+  background-color: #f2f3f4;
+  border: 1px solid rgba(var(--color-secondary--rgb), 0.3);
+  color: var(--color-blck);
+  outline: none;
+}
+
+.form-select select:invalid {
+  color: #7A7A7A;
+}
+
+.form-select select.error {
+  border-color: var(--color-red);
+}
+
+.form-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-controls--center {
+  justify-content: center;
+}
+
+.form-file input {
+  position: fixed;
+  transform: scale(0);
+}
+
+.form-file input.error + label {
+  border-color: var(--color-red);
+}
+
+.form-file input.error + label + .form-error {
+  display: block;
+}
+
+.form-file label {
+  display: block;
+  background: #F2F3F4;
+  border: 1px solid rgba(var(--color-secondary--rgb), 0.3);
+  border-radius: 6px;
+  width: 100%;
+  height: 117px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.form-file__name {
+  display: block;
+  font-size: 12px;
+  margin-top: 8px;
 }
 
 .slider-control {
@@ -1543,6 +1652,240 @@ p {
 
 .footer__policy {
   cursor: pointer;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  display: none;
+}
+
+.modal.is-open {
+  display: flex;
+}
+
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  background-color: rgba(var(--color-blck--rgb), 0.6);
+  z-index: 2;
+}
+
+.modal__inner {
+  width: 100%;
+  padding: 100px 0;
+  height: 100vh;
+  overflow-y: auto;
+  position: relative;
+  z-index: 3;
+}
+
+.modal__close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+}
+
+.modal__content {
+  max-width: 692px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 75px 90px;
+  background-color: var(--color-whte);
+  border-radius: 20px;
+  position: relative;
+}
+
+.modal__title {
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 35px;
+  color: #0c609d;
+}
+
+.modal__steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 35px;
+}
+
+.modal__steps-num {
+  height: 50px;
+  border-radius: 10px;
+  background-color: rgba(var(--color-secondary--rgb), 0.28);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-whte);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.modal__steps-num.is-selected {
+  background-color: var(--color-secondary);
+}
+
+.modal-form__section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.modal-form__section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.modal-form__section-content .form-label {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.modal-form__section-content .form-label span {
+  color: var(--color-red);
+}
+
+.modal-form__section-title {
+  display: none;
+}
+
+.modal-form__section-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(50% - 5px);
+  height: 54px;
+  background-color: var(--color-primary-light);
+  border: 1px solid var(--color-primary-light);
+  border-radius: 40px;
+}
+
+.modal-form__section-btn--border {
+  background-color: transparent;
+  border: 1px solid var(--color-primary);
+}
+
+.modal-form__section-btn--wide {
+  width: 100%;
+}
+
+.wizzard .steps {
+  padding: 0;
+}
+
+.wizzard .steps ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 35px;
+}
+
+.wizzard .steps li {
+  height: 50px;
+  border-radius: 10px;
+  background-color: rgba(var(--color-secondary--rgb), 0.28);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-whte);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.wizzard .steps li.current {
+  background-color: var(--color-secondary);
+}
+
+.wizzard .steps li .current-info {
+  display: none;
+}
+
+.wizzard .steps li .number {
+  display: none;
+}
+
+.wizzard .actions {
+  margin-top: 50px;
+}
+
+.wizzard .actions ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.wizzard .actions ul li a[href="#previous"] {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 54px;
+  border-radius: 50px;
+  border: 1px solid var(--color-primary);
+  font-size: 18px;
+}
+
+.wizzard .actions ul li a[href="#next"],
+.wizzard .actions ul li a[href="#finish"] {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 54px;
+  border-radius: 50px;
+  background-color: var(--color-primary-light);
+  font-size: 18px;
+}
+
+.documents {
+  position: relative;
+  max-width: 714px;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color-whte);
+  overflow-y: auto;
+  padding: 75px 60px;
+  z-index: 3;
+  margin: 0 0 0 auto;
+}
+
+.documents::-webkit-scrollbar {
+  display: none;
+}
+
+.documents__title {
+  margin-bottom: 40px;
+}
+
+.documents__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px 14px;
+}
+
+.documents__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.documents__item-name {
+  font-size: 12px;
+  margin-top: 6px;
 }
 
 .hero {
@@ -2793,6 +3136,61 @@ p {
 
   .footer__bottom {
     font-size: 14px;
+  }
+
+  .modal__inner {
+    padding: 50px 16px;
+  }
+
+  .modal__close {
+    top: 24px;
+    right: 16px;
+  }
+
+  .modal__content {
+    padding: 24px 16px;
+    border-radius: 12px;
+  }
+
+  .modal__title {
+    font-size: 24px;
+    padding-right: 20px;
+    margin-bottom: 24px;
+  }
+
+  .modal__steps {
+    margin-bottom: 24px;
+  }
+
+  .modal-form__section-content .form-label {
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+
+  .wizzard .actions {
+    margin-top: 24px;
+  }
+
+  .wizzard .actions ul li a[href="#previous"] {
+    font-size: 14px;
+    height: 48px;
+    padding: 12px;
+  }
+
+  .wizzard .actions ul li a[href="#next"],
+  .wizzard .actions ul li a[href="#finish"] {
+    font-size: 14px;
+    height: 48px;
+    padding: 12px;
+  }
+
+  .documents {
+    max-width: 100%;
+    padding: 24px 16px;
+  }
+
+  .documents__title {
+    margin-bottom: 24px;
   }
 
   .hero {

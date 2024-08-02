@@ -1,0 +1,77 @@
+.modal.js-modal(data-modal="order")
+  .modal__overlay.js-modal-overlay 
+  .modal__inner 
+    .modal__content
+      button.modal__close.js-modal-close
+        +svg(17, 17, 'close')
+      .modal__title заявка на прохождение стажировки
+      form(id="form-modal" action="#" class="step-app modal-form")
+        .modal-form__content.wizzard
+          h3.modal-form__section-title 01
+          section.modal-form__section-content
+            .form-group 
+              label.form-label(for="userName") Фамилия Имя Отчество<span>*</span>
+              input.form-control.form-control--grey(type="text" id="userName" name="userName" placeholder="Введите ваши ФИО" required)
+              span.form-error Это поле должно быть заполнено
+            .form-group 
+              label.form-label(for="userDate") Дата рождения<span>*</span>
+              input.form-control.form-control--grey(type="text" id="userDate" name="userDate" placeholder="DD.MM.YYYY " required)
+              span.form-error Это поле должно быть заполнено
+            .form-group 
+              label.form-label(for="userNum") Телефон для связи<span>*</span>
+              input.form-control.form-control--grey.js-tel-input(type="text" id="userNum" name="userNum" placeholder="+7(___)___-__-__" required)  
+              span.form-error Это поле должно быть заполнено
+            .form-group 
+              label.form-label(for="userMail") E-mail<span>*</span>
+              input.form-control.form-control--grey(type="text" id="userEmail" name="userEmail" placeholder="Введите ваш E-mail" required)  
+              span.form-error Это поле должно быть заполнено
+            .form-group 
+              label.form-label(for="userPlace") Место проживания<span>*</span>
+              input.form-control.form-control--grey(type="text" id="userPlace" name="userPlace" required)  
+              span.form-error Это поле должно быть заполнено
+          h3.modal-form__section-title 02
+          section.modal-form__section-content
+            .form-group 
+              label.form-label(for="") Учебное заведение<span>*</span>
+              input.form-control.form-control--grey(type="text" placeholder="Введите ваши ФИО" required)
+              span.form-error Это поле должно быть заполнено
+            .form-group 
+              label.form-label(for="") Факультет<span>*</span>
+              input.form-control.form-control--grey(type="text" name="faculty" id="faculty" placeholder="" required)
+              span.form-error Это поле должно быть заполнено
+            .form-group 
+              label.form-label(for="") Курс<span>*</span>
+              input.form-control.form-control--grey(type="text" name="course" id="course" placeholder="" required)  
+              span.form-error Это поле должно быть заполнено
+            .form-group 
+              label.form-label(for="") Локация для стажировки<span>*</span>
+              .form-select
+                select(name="mySelect" required)  
+                  option(value="default" selected disabled hidden) 
+                  option() Москва
+                  option() Москва
+                  option() Москва
+                span.form-error Это поле должно быть заполнено
+          h3.modal-form__section-title 03
+          section.modal-form__section-content
+            .form-group 
+              label.form-label(for="") Направление для стажировки<span>*</span>
+              .form-select 
+                select(name="mySelect" required)  
+                  option(value="default" selected disabled hidden)
+                  option() Электрическая служба
+                  option() Электрическая служба
+                  option() Еще не определился
+                span.form-error Это поле должно быть заполнено
+            .form-group 
+              label.form-label(for="") Ссылка на резюме<span>*</span>
+              input.form-control.form-control--grey(type="text" name="resume" id="resume" placeholder="" required)
+              span.form-error Это поле должно быть заполнено
+            .form-group 
+              span.form-label Файл резюме (PDF, DOC, TXT)
+              .form-file 
+                input.form-file__input.js-form-file(type="file" id="doc" name="doc" required)  
+                label.form-file__content(for="doc") Прикрепить файл
+                span.form-error Это поле должно быть заполнено
+                span.form-file__name.js-form-file-name 
+            .form-agreement Нажимая “Отправить заявку”, Вы даете согласие на обработку персональных данных.

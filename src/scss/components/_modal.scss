@@ -1,0 +1,245 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  display: none;
+
+  &.is-open {
+    display: flex;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    background-color: cl(blck, 0.6);
+    z-index: 2;
+  }
+
+  &__inner {
+    width: 100%;
+    padding: 100px 0;
+    height: 100vh;
+    overflow-y: auto;
+    position: relative;
+    z-index: 3;
+
+    @include media(sm) {
+      padding: 50px 16px;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+
+    @include media(sm) {
+      top: 24px;
+      right: 16px;
+    }
+  }
+
+  &__content {
+    max-width: 692px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 75px 90px;
+    background-color: var(--color-whte);
+    border-radius: 20px;
+    position: relative;
+
+    @include media(sm) {
+      padding: 24px 16px;
+      border-radius: 12px;
+    }
+  }
+
+  &__title {
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+    color: #0c609d;
+
+    @include media(sm) {
+      font-size: 24px;
+      padding-right: 20px;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 35px;
+
+    @include media(sm) {
+      margin-bottom: 24px;
+    }
+
+    &-num {
+      height: 50px;
+      border-radius: 10px;
+      background-color: cl(secondary, 0.28);
+      font-size: 14px;
+      font-weight: 700;
+      color: cl(whte);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      &.is-selected {
+        background-color: cl(secondary);
+      }
+    }
+  }
+
+  &-form__section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      .form-label {
+        display: block;
+        margin-bottom: 12px;
+
+        @include media(sm) {
+          margin-bottom: 8px;
+          font-size: 12px;
+        }
+
+        span {
+          color: var(--color-red);
+        }
+      }
+    }
+
+    &-title {
+      display: none;
+    }
+
+    &-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: calc(50% - 5px);
+      height: 54px;
+      background-color: var(--color-primary-light);
+      border: 1px solid var(--color-primary-light);
+      border-radius: 40px;
+
+      &--border {
+        background-color: transparent;
+        border: 1px solid var(--color-primary);
+      }
+
+      &--wide {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.wizzard {
+  .steps {
+    padding: 0;
+
+    ul {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 35px;
+    }
+
+    li {
+      height: 50px;
+      border-radius: 10px;
+      background-color: cl(secondary, 0.28);
+      font-size: 14px;
+      font-weight: 700;
+      color: cl(whte);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      &.current {
+        background-color: cl(secondary);
+      }
+
+      .current-info {
+        display: none;
+      }
+
+      .number {
+        display: none;
+      }
+    }
+  }
+
+  .actions {
+    margin-top: 50px;
+
+    @include media(sm) {
+      margin-top: 24px;
+    }
+
+    ul {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+
+      li {
+        a[href="#previous"] {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          height: 54px;
+          border-radius: 50px;
+          border: 1px solid var(--color-primary);
+          font-size: 18px;
+
+          @include media(sm) {
+            font-size: 14px;
+            height: 48px;
+            padding: 12px;
+          }
+        }
+
+        a[href="#next"],
+        a[href="#finish"] {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          height: 54px;
+          border-radius: 50px;
+          background-color: var(--color-primary-light);
+          font-size: 18px;
+
+          @include media(sm) {
+            font-size: 14px;
+            height: 48px;
+            padding: 12px;
+          }
+        }
+      }
+    }
+  }
+}

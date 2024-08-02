@@ -2,21 +2,15 @@
   &-group {
     width: 100%;
     position: relative;
-
-    &.is-error {
-      .form-error {
-        opacity: 1;
-      }
-    }
-
   }
 
   &-error {
-    position: absolute;
-    left: 0;
-    bottom: -12px;
-    font-size: 10px;
-    opacity: 0;
+    font-size: 12px;
+    line-height: 1;
+    margin-top: 8px;
+    color: var(--color-red);
+    display: none;
+
   }
 
   &-label {
@@ -51,6 +45,20 @@
     &:focus::placeholder {
       display: none;
     }
+
+    &--grey {
+      background-color: #F2F3F4;
+      border: 1px solid cl(secondary, .3);
+      color: cl(blck);
+    }
+    
+    &.error {
+      border-color: var(--color-red);
+      
+      + .form-error {
+        display: block;
+      }
+    }
   }
 
   &-btn {
@@ -60,6 +68,106 @@
       @include media(xs) {
         width: 100%;
       }
+    }
+  }
+
+  &-select {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: 53px;
+      height: 53px;
+      background-color: #F2F3F4;
+      top: 1px;
+      right: 4px;
+      z-index: 1;
+    }
+
+    &::before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background: url('../img/icons/select-arrow.svg') center center / 20px no-repeat;
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      z-index: 2;
+    }
+
+    select {
+      width: 100%;
+      display: inline-block;
+      box-sizing: border-box;
+      font-size: 16px;
+      line-height: 1.3;
+      font-style: normal;
+      font-weight: 400;
+      padding: 16px 20px;
+      height: 55px;
+      border-radius: 6px;
+      background-color: #f2f3f4;
+      border: 1px solid rgba(var(--color-secondary--rgb), 0.3);
+      color: cl(blck);
+      outline: none;
+
+      &:invalid {
+        color: #7A7A7A;
+      }
+
+      &.error {
+        border-color: var(--color-red);
+      }
+    }
+  }
+
+  &-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &--center {
+      justify-content: center;
+    }
+  }
+
+  &-file {
+
+    input {
+      position: fixed;
+      transform: scale(0);
+
+      &.error {
+
+        + label {
+          border-color: var(--color-red);
+        }
+
+        + label + .form-error {
+          display: block;
+        }
+      }
+    }
+
+    label {
+      display: block;
+      background: #F2F3F4;
+      border: 1px solid cl(secondary, .3);
+      border-radius: 6px;
+      width: 100%;
+      height: 117px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    &__name {
+      display: block;
+      font-size: 12px;
+      margin-top: 8px;
     }
   }
 }
